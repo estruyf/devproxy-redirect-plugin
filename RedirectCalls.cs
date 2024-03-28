@@ -46,6 +46,7 @@ public class RedirectCalls : BaseProxyPlugin
     if (e.Session.HttpClient.Request.RequestUri.AbsoluteUri.Contains(fromUrl))
     {
       var url = e.Session.HttpClient.Request.RequestUri.AbsoluteUri;
+      _logger?.LogRequest([$"Redirecting from {fromUrl} to {toUrl}"], MessageType.InterceptedRequest);
       e.Session.HttpClient.Request.RequestUri = new Uri(url.Replace(fromUrl, toUrl));
     }
 
