@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.15.0/rc.schema.json",
+  "plugins": [{
+    "name": "RedirectCalls",
+    "enabled": true,
+    "pluginPath": "./bin/Debug/net8.0/DevProxyCustomPlugin.dll",
+    "configSection": "redirectCalls"
+  }],
+  "redirectCalls": {
+    "fromUrl": "https://frontmatter.codes",
+    "toUrl": "http://localhost:3000"
+  },
+  "urlsToWatch": [
+    "https://frontmatter.codes/api/*"
+  ],
+  "labelMode": "text",
+  "logLevel": "debug",
+  "newVersionNotification": "stable"
+}
